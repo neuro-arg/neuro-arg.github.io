@@ -1,0 +1,84 @@
+{
+  "kind": "youtube#video",
+  "etag": "5m4xsxyYsrbSkZwbcmrvVhx5NUs",
+  "id": "ymYFqNUt05g",
+  "snippet": {
+    "publishedAt": "2023-06-22T23:00:07Z",
+    "channelId": "UCqOK_pl0LS0e8Lp7HMRDZsw",
+    "title": "Public Static Void",
+    "description": "",
+    "thumbnails": {
+      "default": {
+        "url": "https://i.ytimg.com/vi/ymYFqNUt05g/default.jpg",
+        "width": 120,
+        "height": 90
+      },
+      "medium": {
+        "url": "https://i.ytimg.com/vi/ymYFqNUt05g/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "high": {
+        "url": "https://i.ytimg.com/vi/ymYFqNUt05g/hqdefault.jpg",
+        "width": 480,
+        "height": 360
+      },
+      "standard": {
+        "url": "https://i.ytimg.com/vi/ymYFqNUt05g/sddefault.jpg",
+        "width": 640,
+        "height": 480
+      },
+      "maxres": {
+        "url": "https://i.ytimg.com/vi/ymYFqNUt05g/maxresdefault.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "channelTitle": "_neurosama",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+      "title": "Public Static Void",
+      "description": ""
+    },
+    "defaultAudioLanguage": "en"
+  },
+  "contentDetails": {
+    "duration": "PT3M24S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "true",
+    "licensedContent": false,
+    "contentRating": {},
+    "projection": "rectangular"
+  },
+  "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "madeForKids": false
+  },
+  "statistics": {
+    "viewCount": "71676",
+    "likeCount": "3723",
+    "favoriteCount": "0",
+    "commentCount": "405"
+  },
+  "player": {
+    "embedHtml": "\u003ciframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/ymYFqNUt05g\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen\u003e\u003c/iframe\u003e"
+  },
+  "topicDetails": {
+    "topicCategories": [
+      "https://en.wikipedia.org/wiki/Music",
+      "https://en.wikipedia.org/wiki/Pop_music"
+    ]
+  },
+  "recordingDetails": {},
+  "liveStreamingDetails": {
+    "actualStartTime": "2023-06-22T23:00:07Z",
+    "actualEndTime": "2023-06-22T23:04:29Z",
+    "scheduledStartTime": "2023-06-22T23:00:00Z"
+  }
+}

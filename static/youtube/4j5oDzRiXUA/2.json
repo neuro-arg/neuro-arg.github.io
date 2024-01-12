@@ -1,0 +1,73 @@
+{
+  "kind": "youtube#video",
+  "etag": "TxP94FgRLoMipkm6HUAc2TyYbvA",
+  "id": "4j5oDzRiXUA",
+  "snippet": {
+    "publishedAt": "2023-10-31T18:47:56Z",
+    "channelId": "UCqOK_pl0LS0e8Lp7HMRDZsw",
+    "title": "[Filtered]",
+    "description": "def shift_characters(message):\n    return ''.join([char if char == ' ' else chr(ord(char) - 1) for char in message])\n\nmessage = \"hello world!\"\nwhile True:\n    message = shift_characters(message)\n    print(message)",
+    "thumbnails": {
+      "default": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/default.jpg",
+        "width": 120,
+        "height": 90
+      },
+      "medium": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "high": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/hqdefault.jpg",
+        "width": 480,
+        "height": 360
+      },
+      "standard": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/sddefault.jpg",
+        "width": 640,
+        "height": 480
+      },
+      "maxres": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/maxresdefault.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "channelTitle": "_neurosama",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+      "title": "[Filtered]",
+      "description": "def shift_characters(message):\n    return ''.join([char if char == ' ' else chr(ord(char) - 1) for char in message])\n\nmessage = \"hello world!\"\nwhile True:\n    message = shift_characters(message)\n    print(message)"
+    },
+    "defaultAudioLanguage": "en"
+  },
+  "contentDetails": {
+    "duration": "PT1M26S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "contentRating": {},
+    "projection": "rectangular"
+  },
+  "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "madeForKids": false
+  },
+  "statistics": {
+    "viewCount": "12397",
+    "likeCount": "898",
+    "favoriteCount": "0",
+    "commentCount": "107"
+  },
+  "player": {
+    "embedHtml": "\u003ciframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/4j5oDzRiXUA\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen\u003e\u003c/iframe\u003e"
+  },
+  "recordingDetails": {}
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "youtube#video",
+  "etag": "HAcX8mEWtuMo_-6ERQifAR639Kk",
+  "id": "4j5oDzRiXUA",
+  "snippet": {
+    "publishedAt": "2023-10-31T18:47:56Z",
+    "channelId": "UCqOK_pl0LS0e8Lp7HMRDZsw",
+    "title": "\u0354\u0337\u0370\u0334\u0381\u036d\u0331\u037e\u034c\u036a\u034a\u0349\u0366\u0365\u0340\u0386\u0351\u0385\u0373\u0382\u0381\u033f\u037f\u033d\u0349\u033b\u036b\u037b\u0338\u0355\u0378\u0366\u0376\u0333\u038a\u0350\u034f\u034e\u035f\u038b\u0339\u035c\u0382\u0387\u0386\u037f\u0384\u037d\u0343\u0381\u037a\u037f\u0378\u033e\u035f\u035e\u037a\u0379\u0378\u0371\u0337\u0336\u0374\u0356\u0372\u036b\u0370\u0369\u0368\u038c\u036c\u034e\u034d\u0369\u0368\u0367\u0360\u035f\u0383\u035d\u0362\u035b\u035a\u0359\u035e\u035d\u0356\u037a\u035a\u0359\u0358\u0351\u0350\u0374\u0337\u0353\u0352",
+    "description": "L8gnk0GgYm9cCAA5t7wSIcwc669T+2TY/KlK4ATmQsnVrSY3PWrXAwUPcJiN1AugpkVwkDQARQydWkbLvs+4V0I08mSQKRsDinKZchmMlTJY8KCCS4ZDof1BxuCB7Uab6rAitGRYl+KgXqvROEbCWfb80nsDNaqo6wavnAVX5ld3nD6Ykl0vKIUUVNxuE42xDiMYuENg+tFLwsKcUzuw2KNZ+st46FBkZBniKP5jVQrqZzqAzgvcpHR63yMOZPkWMrVBHBwCRS31GRVx5qpzoB+0dkP0vX+YugYKIе9HvkEFJ440PCpMSd3ITK5Zmq/YJfAg5YyNpmRod3b2MVOfhX35lkjg41+4bidTo4H4d8sTiNz7YD74a5tWuzCj6BXax7ErPueqA7uRCcjaNXnGGrDLaFsEQkpFKWRmWm3hItAF5FiTqfB//7zj10iWCBDt3jJ1uNhrFLG7SX8kpvFyuw== [Key: **************G4]",
+    "thumbnails": {
+      "default": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/default.jpg",
+        "width": 120,
+        "height": 90
+      },
+      "medium": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "high": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/hqdefault.jpg",
+        "width": 480,
+        "height": 360
+      },
+      "standard": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/sddefault.jpg",
+        "width": 640,
+        "height": 480
+      },
+      "maxres": {
+        "url": "https://i.ytimg.com/vi/4j5oDzRiXUA/maxresdefault.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "channelTitle": "_neurosama",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+      "title": "\u0354\u0337\u0370\u0334\u0381\u036d\u0331\u037e\u034c\u036a\u034a\u0349\u0366\u0365\u0340\u0386\u0351\u0385\u0373\u0382\u0381\u033f\u037f\u033d\u0349\u033b\u036b\u037b\u0338\u0355\u0378\u0366\u0376\u0333\u038a\u0350\u034f\u034e\u035f\u038b\u0339\u035c\u0382\u0387\u0386\u037f\u0384\u037d\u0343\u0381\u037a\u037f\u0378\u033e\u035f\u035e\u037a\u0379\u0378\u0371\u0337\u0336\u0374\u0356\u0372\u036b\u0370\u0369\u0368\u038c\u036c\u034e\u034d\u0369\u0368\u0367\u0360\u035f\u0383\u035d\u0362\u035b\u035a\u0359\u035e\u035d\u0356\u037a\u035a\u0359\u0358\u0351\u0350\u0374\u0337\u0353\u0352",
+      "description": "L8gnk0GgYm9cCAA5t7wSIcwc669T+2TY/KlK4ATmQsnVrSY3PWrXAwUPcJiN1AugpkVwkDQARQydWkbLvs+4V0I08mSQKRsDinKZchmMlTJY8KCCS4ZDof1BxuCB7Uab6rAitGRYl+KgXqvROEbCWfb80nsDNaqo6wavnAVX5ld3nD6Ykl0vKIUUVNxuE42xDiMYuENg+tFLwsKcUzuw2KNZ+st46FBkZBniKP5jVQrqZzqAzgvcpHR63yMOZPkWMrVBHBwCRS31GRVx5qpzoB+0dkP0vX+YugYKIе9HvkEFJ440PCpMSd3ITK5Zmq/YJfAg5YyNpmRod3b2MVOfhX35lkjg41+4bidTo4H4d8sTiNz7YD74a5tWuzCj6BXax7ErPueqA7uRCcjaNXnGGrDLaFsEQkpFKWRmWm3hItAF5FiTqfB//7zj10iWCBDt3jJ1uNhrFLG7SX8kpvFyuw== [Key: **************G4]"
+    },
+    "defaultAudioLanguage": "en"
+  },
+  "contentDetails": {
+    "duration": "PT1M26S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "contentRating": {},
+    "projection": "rectangular"
+  },
+  "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "madeForKids": false
+  },
+  "statistics": {
+    "viewCount": "184",
+    "likeCount": "47",
+    "favoriteCount": "0",
+    "commentCount": "17"
+  },
+  "player": {
+    "embedHtml": "\u003ciframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/4j5oDzRiXUA\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen\u003e\u003c/iframe\u003e"
+  },
+  "recordingDetails": {}
+}

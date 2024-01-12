@@ -1,0 +1,79 @@
+{
+  "kind": "youtube#video",
+  "etag": "uUevp-dq7rW9TJ7yA-8CL7i6BNY",
+  "id": "zMlH7RH6psw",
+  "snippet": {
+    "publishedAt": "2023-04-27T11:00:01Z",
+    "channelId": "UCqOK_pl0LS0e8Lp7HMRDZsw",
+    "title": "Study",
+    "description": "For the best experience, listen with headphones, while studying in a quiet room.\n\n0:00 - I don't want to be an engineer \n4:18 - Fallen down \n7:43 - I think I saw a ghost \n8:39 - ??? \n9:15 - I don't want to be human \n13:27 - uʍop uǝllɐɟ \n13:58 - I'm not like the other girls\n\n17:31 - I don't want to be an engineer \n21:48 - Fallen down \n25:14 - I think I saw a ghost \n26:09 - ??? \n26:27 - Is anyone watching? \n30:39 - uʍop uǝllɐɟ \n31:10 - I'm fine...",
+    "thumbnails": {
+      "default": {
+        "url": "https://i.ytimg.com/vi/zMlH7RH6psw/default.jpg",
+        "width": 120,
+        "height": 90
+      },
+      "medium": {
+        "url": "https://i.ytimg.com/vi/zMlH7RH6psw/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "high": {
+        "url": "https://i.ytimg.com/vi/zMlH7RH6psw/hqdefault.jpg",
+        "width": 480,
+        "height": 360
+      },
+      "standard": {
+        "url": "https://i.ytimg.com/vi/zMlH7RH6psw/sddefault.jpg",
+        "width": 640,
+        "height": 480
+      },
+      "maxres": {
+        "url": "https://i.ytimg.com/vi/zMlH7RH6psw/maxresdefault.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "channelTitle": "_neurosama",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+      "title": "Study",
+      "description": "For the best experience, listen with headphones, while studying in a quiet room.\n\n0:00 - I don't want to be an engineer \n4:18 - Fallen down \n7:43 - I think I saw a ghost \n8:39 - ??? \n9:15 - I don't want to be human \n13:27 - uʍop uǝllɐɟ \n13:58 - I'm not like the other girls\n\n17:31 - I don't want to be an engineer \n21:48 - Fallen down \n25:14 - I think I saw a ghost \n26:09 - ??? \n26:27 - Is anyone watching? \n30:39 - uʍop uǝllɐɟ \n31:10 - I'm fine..."
+    },
+    "defaultAudioLanguage": "en"
+  },
+  "contentDetails": {
+    "duration": "PT34M45S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "contentRating": {},
+    "projection": "rectangular"
+  },
+  "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "madeForKids": false
+  },
+  "statistics": {
+    "viewCount": "219671",
+    "likeCount": "8547",
+    "favoriteCount": "0",
+    "commentCount": "659"
+  },
+  "player": {
+    "embedHtml": "\u003ciframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/zMlH7RH6psw\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen\u003e\u003c/iframe\u003e"
+  },
+  "topicDetails": {
+    "topicCategories": [
+      "https://en.wikipedia.org/wiki/Music",
+      "https://en.wikipedia.org/wiki/Pop_music"
+    ]
+  },
+  "recordingDetails": {}
+}

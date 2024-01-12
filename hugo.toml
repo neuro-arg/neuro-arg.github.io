@@ -1,0 +1,16 @@
+baseURL = 'https://neuro-arg.github.io/'
+languageCode = 'en-us'
+title = 'Neuro ARG site'
+theme = 'ananke'
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
