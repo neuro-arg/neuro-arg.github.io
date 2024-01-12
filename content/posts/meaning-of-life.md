@@ -81,12 +81,16 @@ After increasing the brightness, you can see Hiyori:
 
 ![Nuero, shown](/images/wdym-nuero-shown.png)
 
-Next 2 frames are static noise overlapped with some text that is
-probably relevant:
+Next 2 frames are static noise overlapped with text:
 
 ![Frame 2](/images/wdym-enhance-frame1.png)
 
 ![Frame 3](/images/wdym-enhance-frame2.png)
+
+After unscrambling and realigning the text, it appears to be the number
+692048501258949201 split into pieces:
+
+![ENHANCE!](/images/wdym-enhance.png)
 
 Next frame has a character sequence and a binary sequence:
 
