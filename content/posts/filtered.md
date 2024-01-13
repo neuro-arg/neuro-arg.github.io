@@ -42,6 +42,26 @@ New description:
 
 New title: `[Filtered]`
 
+## Noise/Line Rotation
+
+Most of the video, the lines of the video are rotated (shifted by a
+certain number of pixels to the side, overflowing pixels get put on the
+other side). The rotation is actually procedural and not random. 
+
+The rotation process is as follows, for each line:
+
+- Split the line into 75-pixel chunks
+- For each chunk, take the number of pixels with brightness over 128,
+  and calculate the absolute difference between that number and 15.
+- Out of all the differences from every chunk in the line, take the
+  biggest one and add 75 to it.
+- Finally, rotate the line by that number of pixels to the right (or for
+  reversing rotation, to the left).
+
+After rotation, a lot of noise still persists, but the image isn't
+nearly as noisy as it was, and Hiyori is visible on screen. No clues
+have been found in the noise.
+
 ## Solution 
 
 The code in the new description hints at shifting the characters.
