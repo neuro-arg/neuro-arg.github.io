@@ -1,0 +1,23 @@
+[package]
+name = "neuro-arg-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "0BSD"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2.90"
+console_error_panic_hook = "0.1.7"
+js-sys = "0.3.67"
+itertools = "0.12.0"
+aes = "0.8.3"
+base64 = "0.21.7"
+flate2 = "1.0.28"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.40"
+
+[profile.release]
+opt-level = "s"

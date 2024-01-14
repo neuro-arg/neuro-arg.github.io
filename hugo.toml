@@ -9,6 +9,11 @@ theme = 'ananke'
     name = "About"
     url = "/about/"
     weight = 10
+  [[menu.main]]
+    identifier = "toolbox"
+    name = "Toolbox"
+    url = "/toolbox.html"
+    weight = 15
 
 [markup]
   [markup.goldmark]
