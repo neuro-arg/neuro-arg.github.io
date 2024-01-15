@@ -113,6 +113,16 @@ Which decodes to the following ascii:
 
 > <code class="base64">c75e0fb05eec877fc8522e550df55ded5b50508fbbe88bb7d82e28d8f2df0e2b</code>
 
+When interpreted as a result of the [Numbers](../numbers/#solution)
+algorithm, the source could be [512 different
+numbers](/toolbox.html#DcxBCsJADAXQu2StEAKfCd7GTH60YKuMrRvp3dvdW72_TMtnW-UmvYFaoSC7t1bdYUZAs4BkIqBQrwi6R7R0o3l6WZbSQi5yfz3eY1qf89kN_ji-vC7bHCdkPwA).
+
+The source could be
+1416938177140**5**6**5**13234**5**0996**5**8**5**54119196**5**770**5**7949581998**45**,
+it could be
+1416938177140**7**6**7**13234**7**0996**7**8**7**54119196**7**770**7**7949581998**67**,
+or it could be something in between.
+
 ---
 
 Finally, the spectrogram of the end of the audio has a message telling
