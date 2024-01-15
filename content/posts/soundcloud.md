@@ -22,7 +22,20 @@ Profile status:
 > Start from X. End with Y. Remove XY + odd one out  
 > "Open" in FireFox
 
-"Start from X, end with Y" is a quote from Numbers II lyrics.
+"Start from X, end with Y" is a quote from Numbers II lyrics. The latter
+line got added later, showing that it's harder to solve this when using
+Chrome and hinting that a file is the answer.
+
+## Profile Background
+
+The profile background has dim text that shows part of the lyrics to
+Numbers:
+
+![Numbers lyrics](/images/soundcloud-bg.jpg)
+
+Increased brightness:
+
+![Numbers lyrics](/images/soundcloud-bg-bright.png)
 
 ## Solution
 
