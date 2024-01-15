@@ -3,7 +3,7 @@ title = 'About'
 date = 2024-01-11T00:00:00Z
 +++
 
-This is a site documenting the [Neuro-sama
+This is an (obviously unofficial) site documenting the [Neuro-sama
 ARG](http://youtube.com/@_neurosama) in a concise form. Its goal is
 collecting source data and solutions rather than brainstorming ideas.
 
