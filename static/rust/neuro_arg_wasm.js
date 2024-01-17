@@ -189,6 +189,22 @@ export function shift(s) {
     return takeObject(ret);
 }
 
+/**
+* @param {string} s
+* @param {string} k
+* @param {boolean} inv
+* @param {boolean} ignore_spaces
+* @returns {any}
+*/
+export function shift_key(s, k, inv, ignore_spaces) {
+    const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passStringToWasm0(k, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ret = wasm.shift_key(ptr0, len0, ptr1, len1, inv, ignore_spaces);
+    return takeObject(ret);
+}
+
 function handleError(f, args) {
     try {
         return f.apply(this, args);

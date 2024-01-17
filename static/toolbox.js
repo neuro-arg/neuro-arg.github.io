@@ -3,6 +3,7 @@ import {
   compress,
   decompress,
   decrypt,
+  shift_key,
   numbers,
   reverse_numbers,
   rust_init,
@@ -14,46 +15,59 @@ let onLoad = () => {
   // test
   let algos = {
     numbers: 0,
-    "reverse-numbers": 1, reverse_numbers: 1,
+    "reverse-numbers": 1,
     aes: 2,
     shift: 3,
+    "keyed-shift": 4,
   };
   const algoElems = [];
-  for (let i = 1; document.getElementById('numbers-algo' + i); ++i) {
-    algoElems.push(document.getElementById('numbers-algo' + i));
+  for (let i = 1; document.getElementById('algo' + i); ++i) {
+    algoElems.push(document.getElementById('algo' + i));
   }
-  const inputElem = document.getElementById('numbers-input');
-  const keyElem = document.getElementById('numbers-input2');
-  const btnElem = document.getElementById('numbers-btn');
-  let outElem = document.getElementById('numbers-output');
-  let updateKeyVisibility = () => {
-    keyElem.hidden = !algoElems[algos.aes].checked;
+  const inputElem = document.getElementById('input');
+  const checkInvElem = document.getElementById('check-inv');
+  const checkIgnoreSpacesElem = document.getElementById('check-ignore-spaces');
+  const keyElem = document.getElementById('input2');
+  const btnElem = document.getElementById('btn');
+  const outElem1 = document.getElementById('output1');
+  const outElem2 = document.getElementById('output2');
+  let updateVisibility = () => {
+    let vis = {};
+    for (let algo in algos) {
+      for (let elem of document.getElementsByClassName('algo-' + algo)) {
+        console.log(elem);
+        if (vis[elem.id]) continue;
+        elem.hidden = !algoElems[algos[algo]].checked;
+        if (!elem.hidden) {
+          vis[elem.id] = true;
+        }
+      }
+    }
   };
   for (let elem of algoElems) {
-    elem.addEventListener('click', () => updateKeyVisibility());
+    elem.addEventListener('click', () => updateVisibility());
   }
   let update = () => {
     let data = {};
     data.input = inputElem.value;
-    if (outElem.tagName != "UL") {
-      outElem.outerHTML = '<ul id="numbers-output"></ul>'
-      outElem = document.getElementById('numbers-output');
-    }
+    outElem1.hidden = true;
+    outElem2.hidden = true;
+    outElem1.innerHTML = "";
+    outElem2.innerHTML = "";
+    const outElem = (algoElems[algos.shift].checked || algoElems[algos["keyed-shift"]].checked) ? outElem2 : outElem1;
+    outElem.hidden = false;
     if (algoElems[algos.numbers].checked) {
       data.algorithm = "numbers";
       let num = numbers(data.input);
-      outElem.innerHTML = "";
       if (num) outElem.innerHTML += "<li>" + num + "</li>";
-    } else if (algoElems[algos.reverse_numbers].checked) {
+    } else if (algoElems[algos["reverse-numbers"]].checked) {
       data.algorithm = "reverse-numbers";
-      outElem.innerHTML = "";
       for (let num of reverse_numbers(data.input)) {
         outElem.innerHTML += "<li>" + num + "</li>";
       }
     } else if (algoElems[algos.aes].checked) {
       data.algorithm = "aes";
       data.key = keyElem.value;
-      outElem.innerHTML = "";
       let dec = decrypt(data.input, data.key);
       if (dec) {
         outElem.innerHTML = '<li id="dec"></li>';
@@ -62,11 +76,17 @@ let onLoad = () => {
       }
     } else if (algoElems[algos.shift].checked) {
       data.algorithm = "shift";
-      if (outElem.tagName != "OL") {
-        outElem.outerHTML = '<ol id="numbers-output" start="0"></ol>'
-        outElem = document.getElementById('numbers-output');
-      }
       for (let val of shift(data.input)) {
+        outElem.innerHTML += '<li><pre id="dec"></pre></li>';
+        document.getElementById('dec').innerText = val;
+        document.getElementById('dec').id = "";
+      }
+    } else if (algoElems[algos["keyed-shift"]].checked) {
+      data.algorithm = "keyed-shift";
+      data.key = keyElem.value;
+      data.inv = checkInvElem.checked;
+      data.ignore_spaces = checkIgnoreSpacesElem.checked;
+      for (let val of shift_key(data.input, data.key, data.inv, data.ignore_spaces)) {
         outElem.innerHTML += '<li><pre id="dec"></pre></li>';
         document.getElementById('dec').innerText = val;
         document.getElementById('dec').id = "";
@@ -90,7 +110,7 @@ let onLoad = () => {
       update();
     } catch { }
   }
-  updateKeyVisibility();
+  updateVisibility();
 };
 init_wasm().then(_wasm => {
   rust_init();

@@ -1,23 +1,43 @@
 <!doctype html>
 <html>
-  <head>
-    <script type="module" src="/toolbox.js"></script>
-     <title>Neuro ARG Toolbox</title>
-     <meta charset="utf8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <a href="/">Back to the homepage</a>
-    <form id="toolbox">
-      <input id="numbers-input" type="text" placeholder="Input"></input>
-      <input id="numbers-algo1" name="algo" type="radio">Numbers</input>
-      <input id="numbers-algo2" name="algo" type="radio">Reverse Numbers</input>
-      <input id="numbers-algo3" name="algo" type="radio">AES</input>
-      <input id="numbers-algo4" name="algo" type="radio">Shift</input>
-      <input id="numbers-input2" type="text" placeholder="Key" hidden></input>
-      <input id="numbers-btn" type="button" value="Process"></input>
-    </form>
-    <ol id="numbers-output" start="0">
-    </ol>
-  </body>
+
+<head>
+  <script type="module" src="/toolbox.js"></script>
+  <title>Neuro ARG Toolbox</title>
+  <meta charset="utf8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <a href="/">Back to the homepage</a>
+  <form id="toolbox">
+    <p>
+      <input id="algo1" name="algo" type="radio" />
+      <label for="algo1">Numbers</label>
+      <input id="algo2" name="algo" type="radio" />
+      <label for="algo2">Reverse Numbers</label>
+      <input id="algo3" name="algo" type="radio" />
+      <label for="algo3">AES</label>
+      <input id="algo4" name="algo" type="radio" />
+      <label for="algo4">Shift</label>
+      <input id="algo5" name="algo" type="radio" />
+      <label for="algo5">Keyed Shift (Speculative)</label>
+      <p />
+    <p>
+      <input id="input" type="text" placeholder="Input" />
+      <input class="algo-aes algo-keyed-shift" id="input2" type="text" placeholder="Key" hidden />
+      <input class="algo-keyed-shift" id="check-inv" type="checkbox" hidden />
+      <label class="algo-keyed-shift" id="check-inv-label" for="check-inv" hidden>Invert Key</label>
+      <input class="algo-keyed-shift" id="check-ignore-spaces" type="checkbox" checked hidden />
+      <label class="algo-keyed-shift" id="check-ignore-spaces-label" for="check-ignore-spaces" hidden>Ignore
+        Spaces</label>
+      <input id="btn" type="button" value="Process"></input>
+    </p>
+  </form>
+  <ul id="output1" start="0">
+  </ul>
+  <ol id="output2" start="0">
+  </ol>
+</body>
+
 </html>

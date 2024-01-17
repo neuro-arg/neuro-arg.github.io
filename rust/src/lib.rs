@@ -8,34 +8,59 @@ use js_sys::BigInt;
 use wasm_bindgen::prelude::*;
 
 #[derive(Clone, Debug)]
-pub struct Shift(String, u32);
-impl From<String> for Shift {
-    fn from(value: String) -> Self {
-        Self(value, 0)
-    }
-}
+pub struct Shift(Vec<char>);
 impl Shift {
     pub fn new<S: AsRef<str>>(s: S) -> Self {
-        Self::from(s.as_ref().to_owned())
+        Self(s.as_ref().chars().collect())
+    }
+    pub fn with_key<S: AsRef<str>, K: AsRef<str>>(
+        s: S,
+        k: K,
+        inv: bool,
+        ignore_spaces: bool,
+    ) -> Self {
+        let mut s: Vec<_> = s.as_ref().chars().collect();
+        let minmax_val = inv
+            .then(|| k.as_ref().chars().minmax().into_option())
+            .flatten();
+        let mut k1 = k.as_ref().chars();
+        let mut k = std::iter::from_fn(|| {
+            (if let Some(v) = k1.next() {
+                Some(v)
+            } else {
+                k1 = k.as_ref().chars();
+                k1.next()
+            })
+            .map(|x| {
+                minmax_val
+                    .and_then(|(min, max)| {
+                        char::from_u32(max as u32 - x as u32 + min as u32)
+                    })
+                    .unwrap_or(x)
+            })
+        });
+        for x in &mut s {
+            if !ignore_spaces || *x != ' ' {
+                if let Some(y) = k.next().and_then(|y| char::from_u32(*x as u32 + y as u32)) {
+                    *x = y;
+                }
+            }
+        }
+        Self(s)
     }
 }
 impl Iterator for Shift {
     type Item = String;
     fn next(&mut self) -> Option<Self::Item> {
-        let mut valid = false;
-        let ret = self
-            .0
-            .chars()
-            .filter_map(|x| {
-                let val = char::from_u32((x as u32).saturating_sub(self.1).max(b' ' as u32));
-                if matches!(val, Some(x) if x != ' ') {
-                    valid = true;
-                }
-                val
-            })
-            .collect();
-        self.1 += 1;
-        valid.then_some(ret)
+        let ret: String = self.0.iter().copied().collect();
+        let mut good = false;
+        for x in &mut self.0 {
+            if *x != ' ' {
+                good = true;
+                *x = char::from_u32(*x as u32 - 1)?;
+            }
+        }
+        good.then_some(ret)
     }
 }
 impl std::iter::FusedIterator for Shift {}
@@ -359,6 +384,15 @@ pub fn decompress(s: &str) -> JsValue {
 pub fn shift(s: &str) -> JsValue {
     let ret = js_sys::Array::new();
     for val in Shift::new(s) {
+        ret.push(&JsValue::from_str(&val));
+    }
+    ret.into()
+}
+
+#[wasm_bindgen]
+pub fn shift_key(s: &str, k: &str, inv: bool, ignore_spaces: bool) -> JsValue {
+    let ret = js_sys::Array::new();
+    for val in Shift::with_key(s, k, inv, ignore_spaces) {
         ret.push(&JsValue::from_str(&val));
     }
     ret.into()
