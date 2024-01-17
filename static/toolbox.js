@@ -26,7 +26,7 @@ let onLoad = () => {
   }
   const inputElem = document.getElementById('input');
   const checkInvElem = document.getElementById('check-inv');
-  const checkIgnoreSpacesElem = document.getElementById('check-ignore-spaces');
+  const checkModifySpacesElem = document.getElementById('check-modify-spaces');
   const keyElem = document.getElementById('input2');
   const btnElem = document.getElementById('btn');
   const outElem1 = document.getElementById('output1');
@@ -35,7 +35,6 @@ let onLoad = () => {
     let vis = {};
     for (let algo in algos) {
       for (let elem of document.getElementsByClassName('algo-' + algo)) {
-        console.log(elem);
         if (vis[elem.id]) continue;
         elem.hidden = !algoElems[algos[algo]].checked;
         if (!elem.hidden) {
@@ -85,8 +84,8 @@ let onLoad = () => {
       data.algorithm = "keyed-shift";
       data.key = keyElem.value;
       data.inv = checkInvElem.checked;
-      data.ignore_spaces = checkIgnoreSpacesElem.checked;
-      for (let val of shift_key(data.input, data.key, data.inv, data.ignore_spaces)) {
+      data.modify_spaces = checkModifySpacesElem.checked;
+      for (let val of shift_key(data.input, data.key, data.inv, !data.modify_spaces)) {
         outElem.innerHTML += '<li><pre id="dec"></pre></li>';
         document.getElementById('dec').innerText = val;
         document.getElementById('dec').id = "";
@@ -104,9 +103,11 @@ let onLoad = () => {
   if (window.location.hash) {
     try {
       let data = JSON.parse(decompress(window.location.hash.replace('#', '')));
-      algoElems[algos[data.algorithm]].checked = true;
-      if (data.key) keyElem.value = data.key;
-      inputElem.value = data.input;
+      if (data.algorithm !== undefined) algoElems[algos[data.algorithm]].checked = true;
+      if (data.key !== undefined) keyElem.value = data.key;
+      if (data.inv !== undefined) checkInvElem.checked = data.inv;
+      if (data.modify_spaces !== undefined) checkModifySpacesElem.checked = data.modify_spaces;
+      if (data.input !== undefined) inputElem.value = data.input;
       update();
     } catch { }
   }
