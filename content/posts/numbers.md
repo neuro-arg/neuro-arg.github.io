@@ -4,12 +4,17 @@ date = 2024-01-11T00:00:10Z
 tags = ['youtube']
 type = 'posts'
 youtube = 'wc-QCoMm4J8'
+youtube_postfix = '/1'
 summary = 'The first public YouTube video on the _neurosama channel'
 +++
+
+<div><a href="/youtube/wc-QCoMm4J8/0.json">Older YouTube API JSON</a></div>
 
 ## Video description
 
 > <code class="base64">BvmSc+u5NXEjBP3z2gz57G3T8p0sc25U8Bv9yePOa3J6xGRhYcgUL6mnE2eMuFVvAHS5X1QWToqZtG13shERSSM928pZoOpWVQSR0eCZoJU+2FtB8Sd91pArvr5csHjsO2VjSwSgajrWbQLNuisad5cFvGYC/OLopisMBRHmUB+Dl/kqZleP7bF5WgpSxKRDKLjjqWlR95y9a/96vY3vc+gdKb/V4Sd8AIeyIryv53HKFRdB3IL7WOVSr8RSgFbb5Z3KTezpDdA9VvDIGf3pK5TBXpNdJs1g1pnV5C6QvVw7I/ZFhDFqoogGlsbBY0nSihzgvhzM86qgh6OqkYsKwrsdrvwuHTwz2MfzKRBPGGpKYwNmOpgf2dMgT+9GHGWfg/wLvynRqmzyhfyUSLR8tBFBDyOmwKF34Lz7PrVguu47RVawtcyZFRfHvW1rSVfPILi+1JXC5slE2PK84VdutLg4/NGOxC+s1wkYbBRC6ty970raEXKGMZeeLEsLrJhRmh1jtRltCI1zgpoxVhpgUZ/n832SKyClICQpLFKHG8yZ4wcMUA2yAN7b9sXh3nGQxkN9M8g1AuBZez5OsbgC5S9ypO8UMOrhr4f8pwVro15idoDYlg2nO72dpcWUkXBLcDq6h81Y7yaKN3IbrMEqdU9eTYwGCu824OitkxEMuCyQh9vB+rbu6svT9xyUqDLGllM4aF7v681y96CaQ+S2Gg9gmjAHfcR8AfIqGI+qrVZYj9ibcsO/bjPqK/Qni1Ti/4QuznYBQ67LZoU1mp1TOOgpN4LN9OQra65+CSpe/zC1+3JKEVPH4ml4SVoNzunUVoZccFTP86pfA2vwRtd8btPj3cyVRLKvcmj4qxgu1q74mjcgvYsrye4kCUE3MsjL6RYJI6vED+xWYvFhiJGo8+GqUci7Jge//iIaTlAnVtyxzIJjFgrtLyapd+/AM8QtZBYNDC+zKGu6haBhxTlOUyUiIA6SOVWVgiGzz887ieOoiUf8qopHJO9Mptrb16Nh1aPFE7XqDTCZUXn2MU/N7/OFMuRt0DO8/x1A0f9pXuo01uYjDBXQTCDp8Xu6YhvIMgFdC5mYpFJSTuUYSTILhKrm22P0q0kA0eB0O9Rvpi1H0MP2MpdwZ6eB7pDM75MpbC/KOSuv6wb9mhCj9PPCO32+AGltL6m7l+ciFAjrscn8Ych85d970dJc4OSys3LCfZ9OupDFhCqRUAVku/rUdRbup89e0Kf0bD0QSs3Ths5ueQOYxB2FRDA7Pp7IU2EcpM4c9xhGJnaPCE11nihfdEZk9N6T/tOUhREqRgm2kiU54NRZGvi9jCOlQjDYAwDoMMruBND5AHJ3gIHeHY4nYJ9UoR85ZKjHo6F3LsEwjF0=</code>
+
+Later, the description got extended, see [Candles](../candles/).
 
 ## Lyrics
 

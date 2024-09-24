@@ -123,7 +123,7 @@ impl FromIterator<(u8, u8)> for MiniMap {
     }
 }
 
-pub fn numbers_(src: &str) -> Option<String> {
+pub fn numbers_(src: &str, key: Option<&str>) -> Option<String> {
     let mut num = format!("2{src}91");
     num = format!("{}6", num.parse::<BigInt>().ok()? * BigInt::from(5));
     num = num
@@ -132,22 +132,31 @@ pub fn numbers_(src: &str) -> Option<String> {
         .map(|x| if x == '2' { '3' } else { x })
         .collect();
     num = format!("17{}24", num.parse::<BigInt>().ok()? * BigInt::from(9));
-    for (b, a) in src
-        .chars()
-        .take(6)
-        .collect::<Vec<_>>()
-        .into_iter()
-        .enumerate()
-        .rev()
-    {
-        num = num.replace(a, std::str::from_utf8(&[b'a' + b as u8]).unwrap());
+    let key = key.unwrap_or("abcdef");
+    let mut map = ['\0'; 10];
+    for (a, b) in src.chars().zip(key.chars()) {
+        map[(a as u8 - b'0') as usize] = b;
     }
-    Some(num)
+    Some(
+        num.chars()
+            .map(|x| match x {
+                '0'..='9' => {
+                    let k = (x as u8 - b'0') as usize;
+                    if map[k] == '\0' {
+                        x
+                    } else {
+                        map[k]
+                    }
+                }
+                x => x,
+            })
+            .collect(),
+    )
 }
 
 #[wasm_bindgen]
-pub fn numbers(src: &str) -> JsValue {
-    match numbers_(src) {
+pub fn numbers(src: &str, key: Option<String>) -> JsValue {
+    match numbers_(src, key.as_deref()) {
         Some(s) => JsValue::from_str(&s),
         None => JsValue::NULL,
     }
@@ -266,7 +275,7 @@ pub fn reverse_numbers_(src: &str) -> Vec<String> {
         }
     }
     ret.into_iter()
-        .filter(|x| matches!(numbers_(x), Some(x) if x == src))
+        .filter(|x| matches!(numbers_(x, None), Some(x) if x == src))
         .collect::<BTreeSet<_>>()
         .into_iter()
         .collect()
@@ -439,6 +448,7 @@ pub fn vigenere(s: &str, k: &str, alphabet: &str, inv: bool) -> JsValue {
 mod test {
     use super::*;
     use wasm_bindgen_test::wasm_bindgen_test;
+    wasm_bindgen_test::wasm_bindgen_test_configure!(run_in_browser);
 
     #[test]
     fn test() {
@@ -455,7 +465,17 @@ mod test {
 
     #[wasm_bindgen_test]
     fn wasm_test() {
-        assert_eq!(numbers_("572943"), Some("1bad0fcabc1ebdce".to_owned()));
+        assert_eq!(
+            numbers_("572943", Some("abcdef")),
+            Some("1bad0fcabc1ebdce".to_owned())
+        );
+        assert_eq!(
+            numbers_(
+                "5729438873698993183185",
+                Some("92270bf339b1a31d0498defb0573fc7c")
+            ),
+            Some("83e1090eeb3b82e0e933802e32803120".to_owned())
+        );
         assert!(reverse_numbers_("1bad0fcabc1ebdce").contains(&"572943".to_owned()));
     }
 }

@@ -116,12 +116,15 @@ function getInt32Memory0() {
 }
 /**
 * @param {string} src
+* @param {string | undefined} [key]
 * @returns {any}
 */
-export function numbers(src) {
+export function numbers(src, key) {
     const ptr0 = passStringToWasm0(src, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
-    const ret = wasm.numbers(ptr0, len0);
+    var ptr1 = isLikeNone(key) ? 0 : passStringToWasm0(key, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len1 = WASM_VECTOR_LEN;
+    const ret = wasm.numbers(ptr0, len0, ptr1, len1);
     return takeObject(ret);
 }
 
@@ -202,6 +205,24 @@ export function shift_key(s, k, inv, ignore_spaces) {
     const ptr1 = passStringToWasm0(k, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len1 = WASM_VECTOR_LEN;
     const ret = wasm.shift_key(ptr0, len0, ptr1, len1, inv, ignore_spaces);
+    return takeObject(ret);
+}
+
+/**
+* @param {string} s
+* @param {string} k
+* @param {string} alphabet
+* @param {boolean} inv
+* @returns {any}
+*/
+export function vigenere(s, k, alphabet, inv) {
+    const ptr0 = passStringToWasm0(s, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passStringToWasm0(k, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ptr2 = passStringToWasm0(alphabet, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len2 = WASM_VECTOR_LEN;
+    const ret = wasm.vigenere(ptr0, len0, ptr1, len1, ptr2, len2, inv);
     return takeObject(ret);
 }
 

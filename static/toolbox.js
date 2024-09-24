@@ -57,7 +57,8 @@ let onLoad = () => {
     outElem.hidden = false;
     if (algoElems[algos.numbers].checked) {
       data.algorithm = "numbers";
-      let num = numbers(data.input);
+      data.key = keyElem.value;
+      let num = numbers(data.input, data.key);
       if (num) outElem.innerHTML += "<li>" + num + "</li>";
     } else if (algoElems[algos["reverse-numbers"]].checked) {
       data.algorithm = "reverse-numbers";

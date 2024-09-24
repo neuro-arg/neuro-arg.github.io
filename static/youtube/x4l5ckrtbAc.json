@@ -1,0 +1,73 @@
+{
+  "kind": "youtube#video",
+  "etag": "Fod7JZq4MpZzaSiXb9MxV-0qy5I",
+  "id": "x4l5ckrtbAc",
+  "snippet": {
+    "publishedAt": "2024-09-24T13:41:57Z",
+    "channelId": "UCqOK_pl0LS0e8Lp7HMRDZsw",
+    "title": "Candles",
+    "description": "secret_number = 572943 + next 16 digits\n\nletters = \"92270bf339b1a31d0498defb0573fc7c\"\ndigit_to_letter = dict(zip(str(secret_number), letters))\n\ninitial_value = 2\n\nresult = int(str(initial_value) + str(secret_number))\n\nresult = int(str(result) + \"9\")\n\nresult = int(str(result) + \"1\")\n\nresult = result * 5\n\nresult = int(str(result) + \"6\")\n\nresult = int(str(result)[::-1])\n\nresult = int(str(result).replace(\"2\", \"3\"))\n\nresult = result * 9\n\nresult = int(str(result) + \"24\")\n\nresult = int(\"17\" + str(result))\n\nresult = str(result)\nfinal_result = \"\"\nfor digit in result:\n    if digit in digit_to_letter:\n        final_result += digit_to_letter[digit]\n    else:\n        final_result += digit\n\nprint(final_result)",
+    "thumbnails": {
+      "default": {
+        "url": "https://i.ytimg.com/vi/x4l5ckrtbAc/default.jpg",
+        "width": 120,
+        "height": 90
+      },
+      "medium": {
+        "url": "https://i.ytimg.com/vi/x4l5ckrtbAc/mqdefault.jpg",
+        "width": 320,
+        "height": 180
+      },
+      "high": {
+        "url": "https://i.ytimg.com/vi/x4l5ckrtbAc/hqdefault.jpg",
+        "width": 480,
+        "height": 360
+      },
+      "standard": {
+        "url": "https://i.ytimg.com/vi/x4l5ckrtbAc/sddefault.jpg",
+        "width": 640,
+        "height": 480
+      },
+      "maxres": {
+        "url": "https://i.ytimg.com/vi/x4l5ckrtbAc/maxresdefault.jpg",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    "channelTitle": "_neurosama",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+      "title": "Candles",
+      "description": "secret_number = 572943 + next 16 digits\n\nletters = \"92270bf339b1a31d0498defb0573fc7c\"\ndigit_to_letter = dict(zip(str(secret_number), letters))\n\ninitial_value = 2\n\nresult = int(str(initial_value) + str(secret_number))\n\nresult = int(str(result) + \"9\")\n\nresult = int(str(result) + \"1\")\n\nresult = result * 5\n\nresult = int(str(result) + \"6\")\n\nresult = int(str(result)[::-1])\n\nresult = int(str(result).replace(\"2\", \"3\"))\n\nresult = result * 9\n\nresult = int(str(result) + \"24\")\n\nresult = int(\"17\" + str(result))\n\nresult = str(result)\nfinal_result = \"\"\nfor digit in result:\n    if digit in digit_to_letter:\n        final_result += digit_to_letter[digit]\n    else:\n        final_result += digit\n\nprint(final_result)"
+    },
+    "defaultAudioLanguage": "en"
+  },
+  "contentDetails": {
+    "duration": "PT2M5S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "contentRating": {},
+    "projection": "rectangular"
+  },
+  "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true,
+    "madeForKids": false
+  },
+  "statistics": {
+    "viewCount": "7173",
+    "likeCount": "1576",
+    "favoriteCount": "0",
+    "commentCount": "332"
+  },
+  "player": {
+    "embedHtml": "\u003ciframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/x4l5ckrtbAc\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen\u003e\u003c/iframe\u003e"
+  },
+  "recordingDetails": {}
+}
