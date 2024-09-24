@@ -1,4 +1,7 @@
-use std::{collections::BTreeSet, io::Write};
+use std::{
+    collections::{BTreeMap, BTreeSet},
+    io::Write,
+};
 
 use aes::cipher::{BlockDecrypt, KeyInit};
 use base64::Engine;
@@ -33,9 +36,7 @@ impl Shift {
             })
             .map(|x| {
                 minmax_val
-                    .and_then(|(min, max)| {
-                        char::from_u32(max as u32 - x as u32 + min as u32)
-                    })
+                    .and_then(|(min, max)| char::from_u32(max as u32 - x as u32 + min as u32))
                     .unwrap_or(x)
             })
         });
@@ -398,6 +399,42 @@ pub fn shift_key(s: &str, k: &str, inv: bool, ignore_spaces: bool) -> JsValue {
     ret.into()
 }
 
+pub fn vigenere_(s: &str, k: &str, alphabet: &str, inv: bool) -> String {
+    let map: BTreeMap<_, _> = alphabet.chars().enumerate().map(|(a, b)| (b, a)).collect();
+    let k: Vec<_> = k.chars().filter_map(|c| map.get(&c)).collect();
+    let alphabet: Vec<_> = alphabet.chars().collect();
+
+    let mut k1 = k.iter().copied();
+    let mut k = std::iter::from_fn(|| {
+        if let Some(v) = k1.next() {
+            Some(v)
+        } else {
+            k1 = k.iter().copied();
+            k1.next()
+        }
+    });
+    s.chars()
+        .map(|x| {
+            map.get(&x)
+                .and_then(|x| {
+                    k.next().and_then(|k| {
+                        alphabet
+                            .get(
+                                (if inv { x + k } else { x + alphabet.len() - k }) % alphabet.len(),
+                            )
+                            .copied()
+                    })
+                })
+                .unwrap_or(x)
+        })
+        .collect()
+}
+
+#[wasm_bindgen]
+pub fn vigenere(s: &str, k: &str, alphabet: &str, inv: bool) -> JsValue {
+    JsValue::from_str(vigenere_(s, k, alphabet, inv).as_str())
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
@@ -409,6 +446,10 @@ mod test {
         assert_eq!(
             decompress_(&compress_(test_data).unwrap()).unwrap(),
             test_data
+        );
+        assert_eq!(
+            vigenere_("abcdefgh", "test", "abcdefghijklmnopqrstuvwxyz", false),
+            "hxkklboo"
         );
     }
 

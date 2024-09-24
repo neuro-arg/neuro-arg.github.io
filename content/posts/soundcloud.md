@@ -1,10 +1,12 @@
 +++
-title = 'SoundCloud'
+title = 'SoundCloud Profile'
 date = 2024-01-11T00:00:35Z
 tags = ['soundcloud']
 type = 'posts'
 summary = "A summary of the soundcloud profile"
 +++
+
+<div><a href="/soundcloud/profile.json">Raw SoundCloud API JSON</a></div>
 
 [The SoundCloud profile](https://soundcloud.com/572943) was linked in
 [Numbers II](../numbers2). The SoundCloud account has no public tracks,
@@ -58,3 +60,30 @@ This is the decryption key.
 
 > ...  
 > I was born with the creator in her family house. Unfortunately, they couldn’t afford to keep me so they let me go to a good home! . My new family were really nice to me and I was a happy pup! . That all changed when they died in a car crash and left me alone on the streets. I was terrified! Luckily a kind old man found me and took me in. He fed me and helped me find my new loving home!
+
+## Track
+
+(TODO: move to its own article)
+
+At some point in January 2024, it was noticed that the SoundCloud
+profile's tracks counter has changed from 0 to 1. After some digging, it
+turned out this only happens when a previously public track goes
+private.
+
+After fetching the track list of the [SoundCloud
+profile](../soundcloud/) on 2024-01-22 via the internal SoundCloud API,
+the following JSON got returned:
+
+```json
+{"collection":[],"next_href":"https://api-v2.soundcloud.com/users/1258077262/tracks?offset=2023-10-31T17%3A51%3A59.000Z%2Ctracks%2C01653590364&limit=10","query_urn":null}
+```
+
+Note the `offset=2023-10-31T17:51:59.000Z,tracks,01653590364` in the
+URL.
+
+This showed two important thingss:
+1. The track was uploaded the same day as the
+   [\[Filtered\]](../filtered/) video
+2. The track ID is 1653590364 (doesn't help much, but this means we only
+   need the track secret without the track name for getting its unlisted
+   URL)

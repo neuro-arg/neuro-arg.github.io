@@ -48,6 +48,16 @@ No solution has been found as of yet.
 > the same will become true for AI  
 > I wonder if we'll ever get to a point like that...
 
+## Audio
+
+In the trees & houses scene, Neuro-sama's reversed voice can be heard
+saying fragments of the following phrases:
+
+- I can't seem to get out
+- I think I've fallen down a rabbit hole
+- I think I've hurt myself
+- It's hard not being able to speak or move properly
+
 ## Clues
 
 At 15:57.350, there are some barely visible symbol outlines:
