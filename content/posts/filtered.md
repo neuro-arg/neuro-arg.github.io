@@ -42,25 +42,16 @@ New description:
 
 New title: `[Filtered]`
 
-## Noise/Line Rotation
+## Noise
 
-Most of the video, the lines of the video are rotated (shifted by a
-certain number of pixels to the side, overflowing pixels get put on the
-other side). The rotation is actually procedural and not random. 
+The Hiyori image is always decomposed into 2 images with 0.5 opacity,
+then each line of each image gets put to a certain position on-screen.
+If the 2 images overlap, they blend.
 
-The rotation process is as follows, for each line:
-
-- Split the line into 75-pixel chunks
-- For each chunk, take the number of pixels with brightness over 128,
-  and calculate the absolute difference between that number and 15.
-- Out of all the differences from every chunk in the line, take the
-  biggest one and add 75 to it.
-- Finally, rotate the line by that number of pixels to the right (or for
-  reversing rotation, to the left).
-
-After rotation, a lot of noise still persists, but the image isn't
-nearly as noisy as it was, and Hiyori is visible on screen. No clues
-have been found in the noise.
+The pattern is regular, but very complex. It's possible to undo some of
+the mangling, as seen
+[here](https://www.youtube.com/watch?v=eaWxFEaPlMk), but further
+analysis of the mangling algorithm is currently ongoing.
 
 ## Solution 
 
