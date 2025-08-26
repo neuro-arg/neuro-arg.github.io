@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <script type="module" src="/toolbox.js"></script>
+  <script type="module" src="./toolbox.js"></script>
   <title>Neuro ARG Toolbox</title>
   <meta charset="utf8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +22,8 @@
       <label for="algo4">Shift</label>
       <input id="algo5" name="algo" type="radio" />
       <label for="algo5">Keyed Shift (Speculative)</label>
+      <input id="algo6" name="algo" type="radio" />
+      <label for="algo6">Numbers III</label>
       <p />
     <p>
       <input id="input" type="text" placeholder="Input" />
@@ -32,6 +34,7 @@
       <label class="algo-keyed-shift" id="check-modify-spaces-label" for="check-modify-spaces" hidden>Modify
         Spaces</label>
       <input id="btn" type="button" value="Process"></input>
+      <label class="algo-numbers-III" id="num-III-instructions" for="btn" hidden>"123" -> [1, 2, 3] - "12,3" -> [12, 3] - Seperate inputs with spaces to stack rotations</label>
     </p>
   </form>
   <ul id="output1" start="0">

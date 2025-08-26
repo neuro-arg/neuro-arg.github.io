@@ -123,6 +123,112 @@ impl FromIterator<(u8, u8)> for MiniMap {
     }
 }
 
+fn n3_create_grid() -> [[char; 6]; 6] {
+    let mut grid = [[char::MIN; 6]; 6];
+    let alphabet = "abcdefghijqlmnopqrstuvwxyz1234567890"
+        .chars()
+        .collect::<Vec<_>>();
+    let mut index = 0;
+
+    for row in 0..6 {
+        for col in 0..6 {
+            grid[row][col] = alphabet[index];
+            index += 1;
+        }
+    }
+
+    grid
+}
+fn n3_print_grid(grid: [[char; 6]; 6]) -> String {
+    let mut output = String::from("");
+    for row in 0..6 {
+        output += "\\n";
+        for col in 0..6 {
+            output = format!("{}{} ", output, grid[row][col].to_string());
+        }
+    }
+    return output
+}
+fn n3_rotate_grid(grid: &mut [[char; 6]; 6], key_numbers: &[usize]) {
+    for i in 0..key_numbers.len() {
+        let rotation_amount = key_numbers[i];
+
+        if i < 6 {
+            n3_rotate_row(grid, i % 6, rotation_amount);
+        } else {
+            n3_rotate_column(grid, (i - 6) % 6, rotation_amount);
+        }
+    }
+}
+
+fn n3_rotate_row(grid: &mut [[char; 6]; 6], row: usize, mut amount: usize) {
+    amount %= 6;
+    let mut temp = [char::MIN; 6];
+
+    for col in 0..6 {
+        temp[col] = grid[row][col];
+    }
+
+    for col in 0..6 {
+        grid[row][col] = temp[(col.wrapping_sub(amount).wrapping_add(6)) % 6]
+    }
+}
+
+fn n3_rotate_column(grid: &mut [[char; 6]; 6], col: usize, mut amount: usize) {
+    amount %= 6;
+    let mut temp = [char::MIN; 6];
+
+    for row in 0..6 {
+        temp[row] = grid[row][col];
+    }
+
+    for row in 0..6 {
+        grid[row][col] = temp[(row.wrapping_sub(amount).wrapping_add(6)) % 6];
+    }
+}
+
+pub fn numbers_III_(src: &str, key: Option<&str>) -> Option<String> {
+    let mut grid = n3_create_grid();
+    let mut output = String::from("Original Grid:");
+
+    output += &n3_print_grid(grid);
+
+    let mut key_numbers: Vec<&str> = src
+        .split(" ")
+        .collect();
+    for num in key_numbers.iter() {
+        let mut numbers: Vec<usize>;
+        if num.contains(",") {
+            numbers = num.split(',')
+                .map(|part| part.parse::<usize>().unwrap())
+                .collect();
+        } else {
+            numbers = num.chars()
+                .map(|part| part.to_digit(10).unwrap() as usize)
+                .collect(); 
+        }
+        n3_rotate_grid(&mut grid, &numbers);
+        //output += " \\nEncrypted Grid after Rotating\\n";
+        //output += &n3_print_grid(grid);
+    }
+    
+
+    output += " \\n \\nEncrypted Grid after Rotating";
+    output += &n3_print_grid(grid);
+    
+    Some(
+        output.to_string()
+    )
+}
+
+#[wasm_bindgen]
+pub fn numbers_III(src: &str, key: Option<String>) -> JsValue {
+    match numbers_III_(src, key.as_deref()) {
+        Some(s) => JsValue::from_str(&s),
+        None => JsValue::NULL,
+    }
+}
+
 pub fn numbers_(src: &str, key: Option<&str>) -> Option<String> {
     let mut num = format!("2{src}91");
     num = format!("{}6", num.parse::<BigInt>().ok()? * BigInt::from(5));

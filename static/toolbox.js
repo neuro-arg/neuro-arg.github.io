@@ -6,6 +6,7 @@ import {
   shift_key,
   numbers,
   reverse_numbers,
+  numbers_III,
   rust_init,
   shift,
 } from "./rust/neuro_arg_wasm.js";
@@ -19,6 +20,7 @@ let onLoad = () => {
     aes: 2,
     shift: 3,
     "keyed-shift": 4,
+    "numbers-III": 5,
   };
   const algoElems = [];
   for (let i = 1; document.getElementById('algo' + i); ++i) {
@@ -87,6 +89,16 @@ let onLoad = () => {
       data.inv = checkInvElem.checked;
       data.modify_spaces = checkModifySpacesElem.checked;
       for (let val of shift_key(data.input, data.key, data.inv, !data.modify_spaces)) {
+        outElem.innerHTML += '<li><pre id="dec"></pre></li>';
+        document.getElementById('dec').innerText = val;
+        document.getElementById('dec').id = "";
+      }
+    } else if (algoElems[algos["numbers-III"]].checked) {
+      console.log("numbers 3");
+      data.algorithm = "numbers-III";
+      data.key = keyElem.value;
+      let num = "hello";//numbers_III(data.input, data.key);
+      for (let val of numbers_III(data.input).split("\\n")) {
         outElem.innerHTML += '<li><pre id="dec"></pre></li>';
         document.getElementById('dec').innerText = val;
         document.getElementById('dec').id = "";

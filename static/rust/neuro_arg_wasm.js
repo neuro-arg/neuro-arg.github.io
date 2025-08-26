@@ -119,6 +119,20 @@ function getInt32Memory0() {
 * @param {string | undefined} [key]
 * @returns {any}
 */
+export function numbers_III(src, key) {
+    const ptr0 = passStringToWasm0(src, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    var ptr1 = isLikeNone(key) ? 0 : passStringToWasm0(key, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len1 = WASM_VECTOR_LEN;
+    const ret = wasm.numbers_III(ptr0, len0, ptr1, len1);
+    return takeObject(ret);
+}
+
+/**
+* @param {string} src
+* @param {string | undefined} [key]
+* @returns {any}
+*/
 export function numbers(src, key) {
     const ptr0 = passStringToWasm0(src, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
